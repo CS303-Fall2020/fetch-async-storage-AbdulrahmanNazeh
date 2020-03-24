@@ -1,29 +1,31 @@
-import {createStackNavigator} from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
-import Home from '../components/home';
-import Details from '../screens/details';
-const screens ={
-    Home:{
-        screen: Home,
-        navigationOptions:{
-            title:'Home',
-            headerStyle:{
-                backgroundColor: '#eee'
-            }
+import { createStackNavigator } from "react-navigation-stack";
+import { createAppContainer } from "react-navigation";
+import Login from "../components/Login";
+import Register from "../components/Register";
+
+import ForgetPassword from "../components/ForgetPassword";
+const screens = {
+    Login: {
+        screen: Login,
+
+
+    },
+    ForgetPassword: {
+        screen: ForgetPassword,
+        navigationOptions: {
+            headerLeft: () => null
         }
     },
-    Details:{
-        screen: Details,
-        navigationOptions:{
-            title:'Details ',
-            headerStyle:{
-                backgroundColor: '#eee'
-            }
+
+    Register: {
+        screen: Register,
+        navigationOptions: {
+            headerLeft: () => null
         }
-    }
-    
+
+    },
 }
 
-const HomeStack= createStackNavigator(screens);
+const HomeStack = createStackNavigator(screens);
 
 export default createAppContainer(HomeStack);
